@@ -1,0 +1,260 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ICIG DESIGN SYSTEM
+   Light-forward, dark as punctuation.
+   Structure comes from space and hairlines, not from boxes.
+   ============================================================ */
+
+@theme {
+  /* ---- Canvas & surfaces ---------------------------------- */
+  --color-canvas: #fbfbfa;
+  --color-surface: #ffffff;
+  --color-subtle: #f4f4f1;
+  --color-hairline: #e6e6e1;
+
+  /* ---- Ink ------------------------------------------------- */
+  --color-ink: #0c1222;
+  --color-ink-2: #414a5c;
+  --color-ink-3: #737c8d;
+
+  /* ---- Dark surface (punctuation) ------------------------- */
+  --color-night: #0a1020;
+  --color-night-2: #131b2e;
+  --color-night-3: #1c2537;
+
+  /* ---- Accent ---------------------------------------------- */
+  --color-accent: #8c6d12;
+  --color-accent-bright: #d9b65f;
+
+  /* ---- Semantic (kept for legacy references) --------------- */
+  --color-gold: #8c6d12;
+  --color-navy: #0c1222;
+
+  /* ---- Typography ------------------------------------------ */
+  --font-sans: var(--font-sans-body), ui-sans-serif, system-ui, sans-serif;
+  --font-editorial: var(--font-serif-body), ui-serif, Georgia, serif;
+
+  /* Display: tight leading, negative tracking as size grows */
+  --text-display: clamp(2.75rem, 7.2vw, 5.5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.038em;
+
+  --text-title: clamp(2.125rem, 4.6vw, 3.5rem);
+  --text-title--line-height: 1.06;
+  --text-title--letter-spacing: -0.03em;
+
+  --text-subtitle: clamp(1.5rem, 2.8vw, 2.125rem);
+  --text-subtitle--line-height: 1.18;
+  --text-subtitle--letter-spacing: -0.022em;
+
+  --text-heading: 1.375rem;
+  --text-heading--line-height: 1.25;
+  --text-heading--letter-spacing: -0.018em;
+
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.6;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.6;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.1;
+  --text-label--letter-spacing: 0.15em;
+
+  /* ---- Motion --------------------------------------------- */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* ---- Radii ----------------------------------------------- */
+  --radius-card: 1.25rem;
+
+  /* ---- Elevation ------------------------------------------ */
+  --shadow-hairline: 0 1px 2px rgba(12, 18, 34, 0.04);
+  --shadow-lifted: 0 1px 2px rgba(12, 18, 34, 0.04),
+    0 8px 24px -8px rgba(12, 18, 34, 0.1);
+  --shadow-float: 0 1px 2px rgba(12, 18, 34, 0.05),
+    0 18px 48px -16px rgba(12, 18, 34, 0.18);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-canvas);
+  }
+
+  /* Focus is a first-class state, not an afterthought */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Page gutter — one definition, used everywhere */
+  .container-page {
+    width: 100%;
+    max-width: 96rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-page {
+      padding-inline: 4rem;
+    }
+  }
+
+  /* Vertical rhythm for full-bleed sections */
+  .section-y {
+    padding-block: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-y {
+      padding-block: 7rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-y {
+      padding-block: 8.5rem;
+    }
+  }
+
+  /* Small-caps label. Restrained — a label, not a badge. */
+  .label {
+    font-size: var(--text-label);
+    line-height: 1.1;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Dark section helper.
+     Only sets inherited colour + hairline. Descendant colours are applied
+     explicitly in markup — a descendant rule here would lose to (or win
+     against) Tailwind text-* utilities unpredictably. */
+  .on-night {
+    color: #fff;
+  }
+  .on-night hr,
+  .on-night .hairline {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Editorial serif, reserved for pull-quotes and the core message */
+  .font-editorial {
+    font-family: var(--font-editorial);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  /* Translucent floating chrome — content scrolls underneath */
+  .glass {
+    background-color: color-mix(in srgb, var(--color-canvas) 72%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .glass-dark {
+    background-color: color-mix(in srgb, var(--color-night) 72%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* Soft fade where content meets floating chrome (scroll edge effect) */
+  .scroll-fade {
+    mask-image: linear-gradient(to bottom, transparent, #000 24px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 24px);
+  }
+
+  /* Horizontal counterpart — for scrollable tab strips */
+  .scroll-fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent
+    );
+  }
+}
+
+/* Reduced motion: feedback stays, displacement goes */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reduced transparency: frost becomes solid */
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass-dark {
+    background-color: var(--color-canvas);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-hairline: #9aa0a8;
+    --color-ink-2: #1f2733;
+  }
+}
