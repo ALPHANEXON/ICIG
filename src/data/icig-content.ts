@@ -75,10 +75,11 @@ export const ICIG_SITE_INFO = {
   tagline: "Building Stronger Organizations Through Effective Internal Controls",
   location: "Accra, Ghana",
   copyright: "© 2026 Internal Control Institute Ghana. All rights reserved.",
+  email: "info@icighana.org",
+  website: "https://icighana.org/",
+  websiteLabel: "icighana.org",
   placeholders: {
-    email: "[Insert Email]",
     phone: "[Insert Number]",
-    website: "[Insert Website]",
     socialLinks: "[Insert Links]",
   },
   disclaimerNotice:
