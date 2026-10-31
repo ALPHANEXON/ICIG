@@ -7,6 +7,9 @@
    ============================================================ */
 
 @theme {
+  /* Where the full primary nav fits on one line; below it, the menu button. */
+  --breakpoint-nav: 85rem;
+
   /* ---- Canvas & surfaces ---------------------------------- */
   --color-canvas: #fbfbfa;
   --color-surface: #ffffff;

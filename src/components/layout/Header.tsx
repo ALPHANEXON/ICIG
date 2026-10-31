@@ -78,7 +78,7 @@ export default function Header() {
               priority
               className="h-11 w-auto lg:h-12"
             />
-            <span className="hidden flex-col leading-none sm:flex lg:hidden xl:flex">
+            <span className="hidden flex-col leading-none sm:flex nav:hidden 2xl:flex">
               <span className="text-[15px] font-semibold tracking-[-0.02em] text-brand-navy">
                 Internal Control Institute
               </span>
@@ -89,7 +89,7 @@ export default function Header() {
           </Link>
 
           {/* Primary navigation */}
-          <nav className="hidden flex-1 items-center justify-center lg:flex" aria-label="Primary">
+          <nav className="hidden flex-1 items-center justify-center nav:flex" aria-label="Primary">
             {NAVIGATION_ITEMS.map((item) => {
               const active = isActive(item.href, item.children);
 
@@ -108,7 +108,7 @@ export default function Header() {
                       aria-expanded={expanded}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu(expanded ? null : item.label)}
-                      className={`relative flex items-center gap-1 rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
+                      className={`relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
                         active || expanded ? "text-brand-navy" : "text-ink-2 hover:text-brand-navy"
                       }`}
                     >
@@ -172,7 +172,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
+                  className={`relative whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
                     active ? "text-brand-navy" : "text-ink-2 hover:text-brand-navy"
                   }`}
                 >
@@ -190,13 +190,13 @@ export default function Header() {
           </nav>
 
           {/* Single, unambiguous action */}
-          <div className="hidden lg:block">
-            <ButtonLink href="/membership" variant="accent" size="md">
+          <div className="hidden shrink-0 nav:block">
+            <ButtonLink href="/membership" variant="accent" size="md" className="whitespace-nowrap">
               Become a member
             </ButtonLink>
           </div>
 
-          <div className="lg:hidden">
+          <div className="nav:hidden">
             <MobileNav />
           </div>
         </div>

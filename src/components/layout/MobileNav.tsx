@@ -77,7 +77,7 @@ export default function MobileNav() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => setOpen(false)}
-                  className="fixed inset-0 z-50 bg-night/60 backdrop-blur-sm lg:hidden"
+                  className="fixed inset-0 z-50 bg-night/60 backdrop-blur-sm nav:hidden"
                 />
 
                 <motion.aside
@@ -94,7 +94,7 @@ export default function MobileNav() {
                   dragElastic={0.55}
                   dragSnapToOrigin
                   onDragEnd={onDragEnd}
-                  className="fixed inset-y-0 right-0 z-50 flex w-[86vw] max-w-sm flex-col bg-canvas shadow-float lg:hidden"
+                  className="fixed inset-y-0 right-0 z-50 flex w-[86vw] max-w-sm flex-col bg-canvas shadow-float nav:hidden"
                 >
                   <div className="flex h-16 shrink-0 items-center justify-between px-6">
                     <span className="label text-ink-3">Menu</span>
