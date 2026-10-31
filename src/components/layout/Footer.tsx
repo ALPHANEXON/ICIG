@@ -91,15 +91,31 @@ export default function Footer() {
             <h3 className="label text-white/40">Secretariat</h3>
             <dl className="mt-6 space-y-4 text-small">
               {[
-                { term: "Email", value: ICIG_SITE_INFO.placeholders.email },
+                {
+                  term: "Email",
+                  value: ICIG_SITE_INFO.email,
+                  href: `mailto:${ICIG_SITE_INFO.email}`,
+                },
                 { term: "Telephone", value: ICIG_SITE_INFO.placeholders.phone },
-                { term: "Web", value: ICIG_SITE_INFO.placeholders.website },
+                {
+                  term: "Web",
+                  value: ICIG_SITE_INFO.websiteLabel,
+                  href: ICIG_SITE_INFO.website,
+                },
               ].map((row) => (
                 <div key={row.term}>
                   <dt className="text-white/35">{row.term}</dt>
-                  <dd className="mt-0.5 text-white/60 underline decoration-dotted underline-offset-4">
-                    {row.value}
-                  </dd>
+                  {row.href ? (
+                    <dd className="mt-0.5 text-white/60">
+                      <a href={row.href} className="transition-colors duration-200 hover:text-white">
+                        {row.value}
+                      </a>
+                    </dd>
+                  ) : (
+                    <dd className="mt-0.5 text-white/60 underline decoration-dotted underline-offset-4">
+                      {row.value}
+                    </dd>
+                  )}
                 </div>
               ))}
             </dl>

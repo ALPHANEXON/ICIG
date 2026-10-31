@@ -22,9 +22,19 @@ const CATEGORIES = [
 
 const CONTACT_ROWS = [
   { label: "Location", value: ICIG_SITE_INFO.location, pending: false },
-  { label: "Email", value: ICIG_SITE_INFO.placeholders.email, pending: true },
+  {
+    label: "Email",
+    value: ICIG_SITE_INFO.email,
+    href: `mailto:${ICIG_SITE_INFO.email}`,
+    pending: false,
+  },
   { label: "Telephone / WhatsApp", value: ICIG_SITE_INFO.placeholders.phone, pending: true },
-  { label: "Website", value: ICIG_SITE_INFO.placeholders.website, pending: true },
+  {
+    label: "Website",
+    value: ICIG_SITE_INFO.websiteLabel,
+    href: ICIG_SITE_INFO.website,
+    pending: false,
+  },
   { label: "Social media", value: ICIG_SITE_INFO.placeholders.socialLinks, pending: true },
 ];
 
@@ -76,7 +86,16 @@ export default function ContactPage() {
                           : "text-ink"
                       }`}
                     >
-                      {row.value}
+                      {row.href ? (
+                        <a
+                          href={row.href}
+                          className="underline-offset-[6px] transition-colors duration-200 hover:text-accent-ink hover:underline"
+                        >
+                          {row.value}
+                        </a>
+                      ) : (
+                        row.value
+                      )}
                     </dd>
                   </div>
                 ))}
