@@ -95,7 +95,7 @@ export default async function KnowledgeArticlePage({ params }: PageProps) {
               <div className="mt-8 grid gap-10 sm:grid-cols-2">
                 {more.map((item) => (
                   <div key={item.slug} className="border-t border-hairline pt-6">
-                    <p className="text-[13px] text-accent">{item.category}</p>
+                    <p className="text-[13px] text-accent-ink">{item.category}</p>
                     <h3 className="text-heading mt-3 font-semibold text-ink">{item.title}</h3>
                     <p className="mt-3 text-small leading-relaxed text-ink-2">{item.summary}</p>
                     <div className="mt-6">

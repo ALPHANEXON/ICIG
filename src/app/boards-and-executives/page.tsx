@@ -123,7 +123,7 @@ export default function BoardsAndExecutivesPage() {
                 as="li"
                 className="bg-subtle p-8 lg:p-10"
               >
-                <p className="label text-accent">{programme.category}</p>
+                <p className="label text-accent-ink">{programme.category}</p>
                 <h3 className="text-heading mt-5 font-semibold text-ink">{programme.title}</h3>
                 <p className="mt-4 text-small leading-relaxed text-ink-2">
                   {programme.summary}

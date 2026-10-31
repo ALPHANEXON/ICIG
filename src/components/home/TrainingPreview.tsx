@@ -57,7 +57,7 @@ export default function TrainingPreview() {
                     <span className="text-[11px] tabular-nums tracking-[0.12em] text-ink-3">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-heading font-semibold text-ink transition-colors duration-200 group-hover:text-accent">
+                    <h3 className="text-heading font-semibold text-ink transition-colors duration-200 group-hover:text-accent-ink">
                       {prog.title}
                     </h3>
                   </div>

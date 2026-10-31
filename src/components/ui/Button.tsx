@@ -15,7 +15,7 @@ const VARIANTS: Record<ButtonVariant, string> = {
   primary:
     "bg-ink text-white hover:bg-night-2 shadow-lifted border border-transparent",
   accent:
-    "bg-accent text-white hover:brightness-110 shadow-lifted border border-transparent",
+    "bg-accent text-brand-navy hover:brightness-105 shadow-lifted border border-transparent",
   secondary:
     "bg-transparent text-ink border border-hairline hover:border-ink/25 hover:bg-subtle",
   "ghost-light":

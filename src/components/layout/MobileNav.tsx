@@ -54,11 +54,11 @@ export default function MobileNav() {
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
-        className="group flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-inset ring-white/15 transition-colors duration-200 hover:bg-white/10"
+        className="group flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-inset ring-hairline transition-colors duration-200 hover:bg-subtle"
       >
         <span className="relative block h-3 w-4">
-          <span className="absolute left-0 top-0 h-px w-full bg-white transition-transform duration-300 ease-out-quint group-hover:translate-y-[3px] group-hover:w-3/4" />
-          <span className="absolute bottom-0 left-0 h-px w-3/4 bg-white transition-transform duration-300 ease-out-quint group-hover:translate-y-[-3px] group-hover:w-full" />
+          <span className="absolute left-0 top-0 h-px w-full bg-brand-navy transition-transform duration-300 ease-out-quint group-hover:translate-y-[3px] group-hover:w-3/4" />
+          <span className="absolute bottom-0 left-0 h-px w-3/4 bg-brand-navy transition-transform duration-300 ease-out-quint group-hover:translate-y-[-3px] group-hover:w-full" />
         </span>
       </button>
 
@@ -139,7 +139,7 @@ export default function MobileNav() {
                                       onClick={() => setOpen(false)}
                                       className={`text-small transition-colors ${
                                         pathname === child.href
-                                          ? "text-accent"
+                                          ? "text-accent-ink"
                                           : "text-ink-3 hover:text-ink"
                                       }`}
                                     >

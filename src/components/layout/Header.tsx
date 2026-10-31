@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion, useScroll } from "framer-motion";
@@ -59,26 +60,29 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Translucent material — page content scrolls underneath, never behind a
-          hard divider. One surface, no second governance strip. */}
+      {/* Solid white so the logo's navy and gold read exactly as supplied.
+          One surface, no second governance strip. */}
       <div
-        className={`glass-dark transition-shadow duration-300 ${
-          scrolled ? "shadow-[0_1px_0_0_rgba(255,255,255,0.08),0_8px_32px_-16px_rgba(0,0,0,0.5)]" : ""
+        className={`bg-surface transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_1px_0_0_rgba(4,34,90,0.08),0_8px_32px_-16px_rgba(4,34,90,0.25)]" : ""
         }`}
       >
         <div className="container-page flex h-16 items-center justify-between gap-8 lg:h-[4.5rem]">
-          {/* Wordmark */}
-          <Link href="/" className="group flex items-center gap-3 shrink-0" aria-label="ICIG home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/8 ring-1 ring-inset ring-white/12 transition-colors duration-300 group-hover:bg-white/12">
-              <span className="font-editorial text-[15px] font-semibold leading-none text-accent-bright">
-                i
-              </span>
-            </span>
-            <span className="flex flex-col leading-none">
-              <span className="text-[15px] font-semibold tracking-[-0.02em] text-white">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="ICIG home">
+            <Image
+              src="/images/brand/icig-mark.png"
+              alt=""
+              width={538}
+              height={224}
+              priority
+              className="h-11 w-auto lg:h-12"
+            />
+            <span className="hidden flex-col leading-none sm:flex lg:hidden xl:flex">
+              <span className="text-[15px] font-semibold tracking-[-0.02em] text-brand-navy">
                 Internal Control Institute
               </span>
-              <span className="mt-0.5 text-[13px] font-medium tracking-[0.01em] text-white/45">
+              <span className="mt-0.5 text-[13px] font-medium tracking-[0.01em] text-ink-3">
                 Ghana
               </span>
             </span>
@@ -105,13 +109,13 @@ export default function Header() {
                       aria-haspopup="true"
                       onClick={() => setOpenMenu(expanded ? null : item.label)}
                       className={`relative flex items-center gap-1 rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
-                        active || expanded ? "text-white" : "text-white/60 hover:text-white"
+                        active || expanded ? "text-brand-navy" : "text-ink-2 hover:text-brand-navy"
                       }`}
                     >
                       {active && (
                         <motion.span
                           layoutId="nav-indicator"
-                          className="absolute inset-0 rounded-full bg-white/10"
+                          className="absolute inset-0 rounded-full bg-brand-navy/8"
                           transition={SPRING_SNAPPY}
                         />
                       )}
@@ -141,7 +145,7 @@ export default function Header() {
                           style={{ transformOrigin: "top center" }}
                           className="absolute left-1/2 top-full w-64 -translate-x-1/2 pt-2"
                         >
-                          <div className="overflow-hidden rounded-2xl bg-night-2/95 p-1.5 shadow-float ring-1 ring-inset ring-white/10 backdrop-blur-2xl">
+                          <div className="overflow-hidden rounded-2xl bg-surface p-1.5 shadow-float ring-1 ring-inset ring-hairline">
                             {item.children.map((child) => (
                               <Link
                                 key={child.href}
@@ -149,8 +153,8 @@ export default function Header() {
                                 onClick={close}
                                 className={`block rounded-xl px-3.5 py-2.5 text-[13px] transition-colors duration-150 ${
                                   pathname === child.href
-                                    ? "bg-white/10 text-white"
-                                    : "text-white/60 hover:bg-white/5 hover:text-white"
+                                    ? "bg-brand-navy/8 text-brand-navy"
+                                    : "text-ink-2 hover:bg-subtle hover:text-brand-navy"
                                 }`}
                               >
                                 {child.label}
@@ -169,13 +173,13 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`relative rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 ${
-                    active ? "text-white" : "text-white/60 hover:text-white"
+                    active ? "text-brand-navy" : "text-ink-2 hover:text-brand-navy"
                   }`}
                 >
                   {active && (
                     <motion.span
                       layoutId="nav-indicator"
-                      className="absolute inset-0 rounded-full bg-white/10"
+                      className="absolute inset-0 rounded-full bg-brand-navy/8"
                       transition={SPRING_SNAPPY}
                     />
                   )}
@@ -202,7 +206,7 @@ export default function Header() {
       <motion.div
         aria-hidden
         style={{ scaleX: reduceMotion ? 0 : scrollYProgress }}
-        className="h-px origin-left bg-accent-bright/70"
+        className="h-px origin-left bg-brand-gold"
       />
     </header>
   );

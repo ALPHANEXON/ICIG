@@ -51,7 +51,7 @@ export default function JourneyPage() {
                     className="grid gap-4 border-t border-hairline py-9 sm:grid-cols-12 sm:gap-8"
                   >
                     <div className="sm:col-span-3">
-                      <p className="text-[11px] tabular-nums tracking-[0.12em] text-accent">
+                      <p className="text-[11px] tabular-nums tracking-[0.12em] text-accent-ink">
                         Stage {String(step.step).padStart(2, "0")} / 06
                       </p>
                     </div>

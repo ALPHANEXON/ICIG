@@ -44,11 +44,11 @@ export default function KnowledgeBrowser() {
             >
               <div className="sm:col-span-8">
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-ink-3">
-                  <span className="text-accent">{article.category}</span>
+                  <span className="text-accent-ink">{article.category}</span>
                   <span>{article.date}</span>
                   <span>{article.readTime}</span>
                 </div>
-                <h2 className="text-heading mt-4 font-semibold text-ink transition-colors duration-200 group-hover:text-accent">
+                <h2 className="text-heading mt-4 font-semibold text-ink transition-colors duration-200 group-hover:text-accent-ink">
                   {article.title}
                 </h2>
                 <p className="mt-3 max-w-2xl text-body leading-relaxed text-ink-2">

@@ -90,7 +90,7 @@ export default function SmesAndEntrepreneursPage() {
                           key={SME_PRACTICAL_CONTROLS[index]}
                           className="flex items-baseline gap-5 border-b border-hairline py-5"
                         >
-                          <span className="w-7 shrink-0 text-[11px] tabular-nums tracking-[0.12em] text-accent">
+                          <span className="w-7 shrink-0 text-[11px] tabular-nums tracking-[0.12em] text-accent-ink">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <span className="text-small leading-relaxed text-ink-2">
@@ -124,7 +124,7 @@ export default function SmesAndEntrepreneursPage() {
                   as="li"
                   className="bg-subtle p-8 lg:p-10"
                 >
-                  <p className="label text-accent">{programme.category}</p>
+                  <p className="label text-accent-ink">{programme.category}</p>
                   <h3 className="text-heading mt-5 font-semibold text-ink">{programme.title}</h3>
                   <p className="mt-4 text-small leading-relaxed text-ink-2">
                     {programme.summary}

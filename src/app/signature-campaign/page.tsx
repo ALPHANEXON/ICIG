@@ -83,7 +83,7 @@ export default function SignatureCampaignPage() {
                 as="li"
                 className="border-t border-hairline pt-8"
               >
-                <span className="text-[13px] tabular-nums text-accent">
+                <span className="text-[13px] tabular-nums text-accent-ink">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-heading mt-5 font-semibold text-ink">{principle.title}</h3>

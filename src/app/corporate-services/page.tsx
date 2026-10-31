@@ -125,7 +125,7 @@ export default function CorporateServicesPage() {
                   },
                 ].map((phase, index) => (
                   <Reveal key={phase.step} delay={index * 0.07} as="li">
-                    <span className="text-[13px] tabular-nums text-accent">{phase.step}</span>
+                    <span className="text-[13px] tabular-nums text-accent-ink">{phase.step}</span>
                     <h3 className="mt-4 font-semibold text-ink">{phase.title}</h3>
                     <p className="mt-3 text-small leading-relaxed text-ink-2">
                       {phase.description}
