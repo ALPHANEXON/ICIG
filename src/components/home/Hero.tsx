@@ -18,7 +18,7 @@ export default function Hero() {
       {/* Depth without noise */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_-10%,rgba(217,182,95,0.10),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_-10%,rgba(245,180,0,0.10),transparent_60%)]"
       />
       <div
         aria-hidden

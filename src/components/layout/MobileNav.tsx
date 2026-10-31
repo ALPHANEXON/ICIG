@@ -54,11 +54,11 @@ export default function MobileNav() {
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
-        className="group flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-inset ring-white/15 transition-colors duration-200 hover:bg-white/10"
+        className="group flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-inset ring-hairline transition-colors duration-200 hover:bg-subtle"
       >
         <span className="relative block h-3 w-4">
-          <span className="absolute left-0 top-0 h-px w-full bg-white transition-transform duration-300 ease-out-quint group-hover:translate-y-[3px] group-hover:w-3/4" />
-          <span className="absolute bottom-0 left-0 h-px w-3/4 bg-white transition-transform duration-300 ease-out-quint group-hover:translate-y-[-3px] group-hover:w-full" />
+          <span className="absolute left-0 top-0 h-px w-full bg-brand-navy transition-transform duration-300 ease-out-quint group-hover:translate-y-[3px] group-hover:w-3/4" />
+          <span className="absolute bottom-0 left-0 h-px w-3/4 bg-brand-navy transition-transform duration-300 ease-out-quint group-hover:translate-y-[-3px] group-hover:w-full" />
         </span>
       </button>
 
@@ -77,7 +77,7 @@ export default function MobileNav() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => setOpen(false)}
-                  className="fixed inset-0 z-50 bg-night/60 backdrop-blur-sm lg:hidden"
+                  className="fixed inset-0 z-50 bg-night/60 backdrop-blur-sm nav:hidden"
                 />
 
                 <motion.aside
@@ -94,7 +94,7 @@ export default function MobileNav() {
                   dragElastic={0.55}
                   dragSnapToOrigin
                   onDragEnd={onDragEnd}
-                  className="fixed inset-y-0 right-0 z-50 flex w-[86vw] max-w-sm flex-col bg-canvas shadow-float lg:hidden"
+                  className="fixed inset-y-0 right-0 z-50 flex w-[86vw] max-w-sm flex-col bg-canvas shadow-float nav:hidden"
                 >
                   <div className="flex h-16 shrink-0 items-center justify-between px-6">
                     <span className="label text-ink-3">Menu</span>
@@ -139,7 +139,7 @@ export default function MobileNav() {
                                       onClick={() => setOpen(false)}
                                       className={`text-small transition-colors ${
                                         pathname === child.href
-                                          ? "text-accent"
+                                          ? "text-accent-ink"
                                           : "text-ink-3 hover:text-ink"
                                       }`}
                                     >

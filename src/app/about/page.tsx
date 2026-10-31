@@ -154,7 +154,7 @@ export default function AboutPage() {
 
               <div className="mt-12 grid gap-px overflow-hidden rounded-card bg-hairline sm:grid-cols-2">
                 <div className="bg-surface p-8">
-                  <p className="label text-accent">Parent body</p>
+                  <p className="label text-accent-ink">Parent body</p>
                   <h4 className="mt-5 text-heading font-semibold text-ink">
                     {ICIG_SITE_INFO.relationshipExplanation.parent.name}
                   </h4>
@@ -163,7 +163,7 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="bg-surface p-8">
-                  <p className="label text-accent">Ghana affiliate</p>
+                  <p className="label text-accent-ink">Ghana affiliate</p>
                   <h4 className="mt-5 text-heading font-semibold text-ink">
                     {ICIG_SITE_INFO.relationshipExplanation.affiliate.name}
                   </h4>

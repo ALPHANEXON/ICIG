@@ -29,7 +29,7 @@ export default function SignatureCampaignSection() {
     <section className="border-b border-hairline bg-canvas">
       <div className="container-page section-y">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="label text-accent">National advocacy campaign</p>
+          <p className="label text-accent-ink">National advocacy campaign</p>
           <h2 className="text-title mt-6 font-semibold text-ink">
             Controls happen wherever people, resources and decisions must be protected.
           </h2>

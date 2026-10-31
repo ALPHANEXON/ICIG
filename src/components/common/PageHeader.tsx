@@ -53,7 +53,7 @@ export default function PageHeader({
 
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className={aside ? "lg:col-span-7" : "lg:col-span-9"}>
-            {eyebrow && <p className="label text-accent">{eyebrow}</p>}
+            {eyebrow && <p className="label text-accent-ink">{eyebrow}</p>}
             <h1 className="text-title mt-6 font-semibold text-ink">{title}</h1>
             {subtitle && (
               <p className="mt-8 max-w-2xl text-lead leading-relaxed text-ink-2">{subtitle}</p>

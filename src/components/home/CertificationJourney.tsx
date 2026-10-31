@@ -30,7 +30,7 @@ export default function CertificationJourney() {
                   className="border-t border-hairline py-7"
                 >
                   <div className="flex items-baseline gap-5">
-                    <span className="w-7 shrink-0 text-[11px] tabular-nums tracking-[0.12em] text-accent">
+                    <span className="w-7 shrink-0 text-[11px] tabular-nums tracking-[0.12em] text-accent-ink">
                       {String(step.step).padStart(2, "0")}
                     </span>
                     <div>

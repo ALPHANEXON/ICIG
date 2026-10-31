@@ -54,8 +54,8 @@ export default function ProgrammeList() {
                   </span>
 
                   <span className="min-w-0 flex-1">
-                    <span className="label block text-accent">{programme.category}</span>
-                    <span className="text-heading mt-3 block font-semibold text-ink transition-colors duration-200 group-hover:text-accent">
+                    <span className="label block text-accent-ink">{programme.category}</span>
+                    <span className="text-heading mt-3 block font-semibold text-ink transition-colors duration-200 group-hover:text-accent-ink">
                       {programme.title}
                     </span>
                     <span className="mt-3 block max-w-2xl text-body leading-relaxed text-ink-2">

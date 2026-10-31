@@ -11,7 +11,7 @@ export default function SmeSection() {
       <div className="container-page section-y">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <p className="label text-accent">For growing businesses</p>
+            <p className="label text-accent-ink">For growing businesses</p>
             <h2 className="text-subtitle mt-6 font-semibold text-ink">
               Good controls are not only for big companies
             </h2>
@@ -51,7 +51,7 @@ export default function SmeSection() {
                   as="li"
                   className="flex items-baseline gap-5 border-b border-hairline py-5"
                 >
-                  <span className="w-7 shrink-0 text-[11px] tabular-nums tracking-[0.12em] text-accent">
+                  <span className="w-7 shrink-0 text-[11px] tabular-nums tracking-[0.12em] text-accent-ink">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-small leading-relaxed text-ink-2">{control}</span>

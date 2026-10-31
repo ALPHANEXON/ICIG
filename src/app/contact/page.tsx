@@ -107,7 +107,7 @@ export default function ContactPage() {
                       transition={SPRING}
                       className="py-10 text-center"
                     >
-                      <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-subtle text-accent">
+                      <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-subtle text-accent-ink">
                         <Check className="h-6 w-6" strokeWidth={2} />
                       </span>
                       <h3 className="text-heading mt-8 font-semibold text-ink">

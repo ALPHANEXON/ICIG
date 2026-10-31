@@ -36,7 +36,7 @@ export default function SectionHeading({
             aria-hidden
           />
           <span
-            className={`label ${tone === "dark" ? "text-accent-bright" : "text-accent"}`}
+            className={`label ${tone === "dark" ? "text-accent-bright" : "text-accent-ink"}`}
           >
             {eyebrow}
           </span>
